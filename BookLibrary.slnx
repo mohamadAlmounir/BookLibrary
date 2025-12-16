@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="BookLibrary/BookLibrary.csproj" />
+  <Project Path="BooksLibrary.core/BooksLibrary.core.csproj" />
+  <Project Path="BooksLibrary.EF/BooksLibrary.EF.csproj" />
+</Solution>
