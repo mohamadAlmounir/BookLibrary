@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BookLibrary.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class GenreController : Controller
@@ -37,7 +37,7 @@ namespace BookLibrary.Controllers
             }
             return Ok(new {Succsess=result.Success,GenreName=result.Data.Name,Message=result.Message });
         }
-        //[Authorize(Roles ="Admin")]
+        [Authorize(Roles ="Admin")]
         [HttpPost("AddGenre")]
         public async Task<IActionResult> AddGenre([FromBody] string genreName)
         {

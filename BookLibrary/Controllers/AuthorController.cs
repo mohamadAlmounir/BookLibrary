@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BookLibrary.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class AuthorController : Controller
@@ -51,7 +51,7 @@ namespace BookLibrary.Controllers
         }
 
 
-        //[Authorize(Roles ="Admin")]
+        [Authorize(Roles ="Admin")]
         [HttpPost("AddAuthor")]
         public async Task<IActionResult> AddAuthor([FromBody] string authorName)
         {

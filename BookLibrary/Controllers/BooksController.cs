@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BookLibrary.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class BooksController : Controller
@@ -70,7 +70,7 @@ namespace BookLibrary.Controllers
         }
 
 
-        //[Authorize(Roles ="Admin")]
+        [Authorize(Roles ="Admin")]
         [HttpPost("AddNewBook")]
         public async Task<IActionResult> AddNewBook([FromBody] BooksLibrary.core.Dtos.BookDto newBook)
         {
@@ -84,7 +84,7 @@ namespace BookLibrary.Controllers
         }
 
 
-        //[Authorize(Roles ="Admin")]
+        [Authorize(Roles ="Admin")]
         [HttpPut("UpdateBook/{id}")]
         public async Task<IActionResult> UpdateBook(int id, [FromBody] BookDto updatedBook)
         {
@@ -98,7 +98,7 @@ namespace BookLibrary.Controllers
         }
 
 
-        //[Authorize(Roles ="Admin")]
+        [Authorize(Roles ="Admin")]
         [HttpDelete("DeleteBook/{id}")]
         public async Task<IActionResult> DeleteBook(int id)
         {
